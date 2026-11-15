@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { PrismaClient } from "@/src/app/generated/prisma-client";
-import { count } from "console";
 
 const prisma = new PrismaClient();
 
