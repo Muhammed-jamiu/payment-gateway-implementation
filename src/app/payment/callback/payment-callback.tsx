@@ -77,8 +77,8 @@ export default function PaymentCallback({ reference }: Props) {
 
   if (error) {
     return (
-      <main className="flex min-h-screen items-center justify-center p-6">
-        <div className="max-w-md text-center">
+      <main className="flex min-h-screen items-center justify-center p-6 ">
+        <div className="max-w-md text-center border-2 border-gray-500 rounded-lg p-6">
           <h1 className="text-2xl font-bold text-red-600">
             Payment not confirmed
           </h1>
@@ -104,11 +104,11 @@ export default function PaymentCallback({ reference }: Props) {
             Payment Successful!
           </h1>
 
-          <p className="mt-3 text-gray-600">
+          <p className="mt-3 text-gray-400">
             Your payment has been verified successfully.
           </p>
 
-          <div className="mt-6 rounded-lg border p-4 text-left">
+          <div className="mt-6 rounded-lg border p-4 text-left w-full ">
             <p>
               <strong>Reference:</strong> {result.data.reference}
             </p>
@@ -126,6 +126,10 @@ export default function PaymentCallback({ reference }: Props) {
               <strong>Order status:</strong> {result.data.orderStatus}
             </p>
           </div>
+
+          <button className="mt-4 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+            Print Receipt
+          </button>
         </div>
       </main>
     );
@@ -134,7 +138,7 @@ export default function PaymentCallback({ reference }: Props) {
     <main className="flex min-h-screen items-center justify-center p-6">
       <div className="max-w-md text-center">
         <h1 className="text-2xl font-semibold">Payment not completed</h1>
-        <p className="mt-3 text-gray-600">
+        <p className="mt-3 text-gray-400">
           {result?.message || "We could not confirm your payment."}
         </p>
       </div>
